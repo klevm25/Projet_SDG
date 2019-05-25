@@ -66,10 +66,9 @@ void Lecture(int *nbclients,int *Q,double*** Dist,int** quantite)
     for (int i=0;i<nbclient;i++) {
       printf("La quantité à livrer pour %d est %d \n",i,quantite[i]);
     }
-
-    int j=0;
+    
     for(int i=0;i<nbclient;i++) {
-      for(j=i;j<nbclient;j++) {
+      for(int j=i;j<nbclient;j++) {
         if (i!=j) {
           printf("La distance entre %d et %d est %lf \n",i,j,Dist[i][j]);
         }
