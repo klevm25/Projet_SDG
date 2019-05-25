@@ -53,6 +53,7 @@ void Lecture(int *nbclients,int *Q,double*** Dist,int** quantite)
   //Lecture de Dist
   *Dist = LectureDist(*nbclients);}
 
+  //le main pourra être supprimé par la suite, il est là pour le test
   int main() {
     int nbclient;
     int Q;
@@ -66,7 +67,7 @@ void Lecture(int *nbclients,int *Q,double*** Dist,int** quantite)
     for (int i=0;i<nbclient;i++) {
       printf("La quantité à livrer pour %d est %d \n",i,quantite[i]);
     }
-    
+
     for(int i=0;i<nbclient;i++) {
       for(int j=i;j<nbclient;j++) {
         if (i!=j) {
