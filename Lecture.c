@@ -51,7 +51,31 @@ void Lecture(int *nbclients,int *Q,double*** Dist,int** quantite)
   *quantite = LectureQuantite(*nbclients);
   
   //Lecture de Dist
-  *Dist = LectureDist(*nbclients);
-  
+  *Dist = LectureDist(*nbclients);}
 
-}
+  int main() {
+    int nbclient;
+    int Q;
+    int* quantite;
+    double** Dist;
+    Lecture(&nbclient,&Q,&Dist,&quantite);
+
+    printf("Le nombre de client est %d \n",nbclient);
+    printf("La quantité maximale d'un camion est %d \n",Q);
+    
+    for (int i=0;i<nbclient;i++) {
+      printf("La quantité à livrer pour %d est %d \n",i,quantite[i]);
+    }
+
+    int j=0;
+    for(int i=0;i<nbclient;i++) {
+      for(j=i;j<nbclient;j++) {
+        if (i!=j) {
+          printf("La distance entre %d et %d est %lf \n",i,j,Dist[i][j]);
+        }
+      }
+    }
+
+
+    
+  }
