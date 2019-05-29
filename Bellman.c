@@ -1,5 +1,6 @@
 /* Bellman.c */
 
+
 #include <stdbool.h>
 #include "Bellman.h"
 
