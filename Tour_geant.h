@@ -1,4 +1,6 @@
 /* tour_geant.h */
+#if ! defined (TOUR_GEANT_H)
+#define TOUR_GEANT_H 1
 /* Inclusion des bibliotheques */
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,8 +10,10 @@
 
 /* Prototype */
 
-extern void TourGeant(int nbclients, double **Dist,int* T);
+extern int* TourGeant(int nbclients, double **Dist);
 
 extern int RechercheProcheVoisin(double** Dist,int nbclients, int i, bool* mark);
+
+#endif
 
 

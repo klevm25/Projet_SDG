@@ -1,7 +1,11 @@
-#include "Bellman.h"
-#include "Solution.h"
-#include "Split.h"
+/* main.c */
+
+#include<stdio.h>
+#include<stdlib.h>
+#include "Lecture.h"
 #include "Tour_geant.h"
+#include "Split.h"
+#include "Bellman.h"
 
 int main()
 {
@@ -9,42 +13,47 @@ int main()
   int nbclients;
   int Q;
   double** Dist;
-  int* quantite,T,pi;
-  struct TableSucc* H;
+  int* quantite;
+  int* pere;
+  double* pi;
+  int* tour_geant;
+  struct liste* H;
   int i;
 
-
+  
   //Lecture
   Lecture(&nbclients,&Q,&Dist,&quantite);
-
+  
   //Tour Geant
-  TourGeant(nbclients, Dist,T);
+  tour_geant = TourGeant(nbclients, Dist);
 
-  //Création du sous graphe auxiliaire
-  Split(T, Q, nbclients, Dist, quantite,H);
+  //Creation du sous graphe auxiliaire
+  H = Split(tour_geant, Q, nbclients, Dist, quantite);
+
+  //Plus court chemin
+  pere = (int*)malloc(nbclients*sizeof(int));
+  pi = (double*)malloc(nbclients*sizeof(double));
+  Bellman(H,Dist,pere,pi,nbclients);
 
 
   //Calcul et affichage du cout
-  printf("Cout total : %lf\n", calcul_cout(pi));
-
-  /* printf("Le chemin emprunté est : %d",);
-  printf("Il faut donc : %d voitures",); */
-
-
+  //printf("Cout total : %lf\n", calcul_cout(solution, nbliste, Dist));
+  
+ 
   //Liberation de la memoire
-
-  //Les donnees
+  
+  //Donnees
   free(quantite);
-
   for(i=0;i<=nbclients;i++)
     free(Dist[i]);
   free(Dist);
-
+  
   //Tour Geant
-  free(T);
-
-  //La structure
-  clear_structure(H);
-
+  free(tour_geant);
+  
+  //Sous graphe auxiliaire
+  //clear_liste(H);
+  
+  
   return 0;
 }

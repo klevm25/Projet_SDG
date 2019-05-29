@@ -1,23 +1,20 @@
 /* split.h */
 
-
+#if ! defined (SPLIT_H)
+#define SPLIT_H 1
 
 /* definition de nos structures */
-struct liste {
-    struct maillon* tete;
-    int nbelem; 
-};
-struct TableSucc {
-  int* Head;
-  struct liste Succ;
-};
-
 struct maillon {
     struct maillon* suivant;
     int sommet;
     int* parcours;
     int poids;
-}
+};
+
+struct liste {
+    struct maillon* tete;
+    int nbelem; 
+};
 
 
 /* definition de NIL */
@@ -29,7 +26,7 @@ struct maillon {
 
 /* Prototypes */
 
-extern void Init_TableSucc(struct TableSucc*, int);
+extern void Init_Head(struct liste*, int);
+extern struct liste* Split(int*,int ,int , double** , int*);
 
-extern void Split(int*,int ,int , double** , int*, struct TableSucc* );
-extern void ajout_en_tete(struct liste*,int,int,int,int);
+#endif
