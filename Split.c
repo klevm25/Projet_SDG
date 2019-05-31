@@ -157,7 +157,7 @@ void ajouter_en_queue_liste(struct liste* L,int poids,int sommet,int client_debu
     nouveau->parcours = chemin(client_debut,client_fin);
     nouveau->suivant = NIL;
 
-    if(L->nbelem = 0) {
+    if(L->nbelem == 0) {
       L->tete = nouveau;
     }
 
@@ -169,6 +169,8 @@ void ajouter_en_queue_liste(struct liste* L,int poids,int sommet,int client_debu
       }
       M->suivant = nouveau;
     }
+
+    L->nbelem ++;
 }
 
 void Init_Head(struct liste* Head,int nbclient) {
@@ -243,12 +245,13 @@ int main() {
   double** Dist;
   int* quantite;
   int* T;
+  struct liste* H;
 
   Lecture(&nbclients,&Q,&Dist,&quantite);
 
   T=TourGeant(nbclients,Dist);
 
-  H=Split(T,Q,Dist,quantite);
-
+  H=Split(T,Q,nbclients,Dist,quantite);
+  afficher_liste(H,nbclients);
 
 }
