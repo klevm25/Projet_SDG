@@ -5,6 +5,65 @@
 #include <stdbool.h>
 #include "Tour_geant.h"
 
+
+
+#include "Lecture.h"
+
+int * LectureQuantite(int nbclients)
+{
+  //Declaration
+  int i;
+  int *quantite;
+  
+  //allocation dynamique de quantite
+  quantite = (int*)malloc(nbclients*sizeof(int));
+  
+  //Remplissage de quantite
+  for(i=0;i<nbclients;i++)
+    scanf("%d",&(quantite[i]));
+  
+  return quantite;
+}
+
+double ** LectureDist(int nbclients)
+{
+  //Declaration
+  int i,j;
+  double** Dist;
+  
+  //allocation dynamique de Dist
+  Dist=(double**)malloc((nbclients+1) * sizeof(double *)); //ok
+  for(i=0;i<nbclients+1;i++)
+  {
+    Dist[i]=(double *)malloc((nbclients+1)*sizeof(double));
+  }
+  
+  //Remplissage de Dist
+  for(i=0;i<nbclients+1;i++)
+  {
+   for(j=0;j<nbclients+1;j++)
+   {
+    scanf("%lf",&Dist[i][j]);
+   }
+  }
+  
+  return Dist;
+}
+
+void Lecture(int *nbclients,int *Q,double*** Dist,int** quantite)
+{
+  //Lecture de nbclients et Q
+  scanf("%d",nbclients);
+  scanf("%d",Q);
+
+  //Lecture de quantite
+  *quantite = LectureQuantite(*nbclients);
+  
+  //Lecture de Dist
+  *Dist = LectureDist(*nbclients);
+  }
+//Ici on lit nos données
+
 int RechercheProcheVoisin(double** Dist,int nbclients, int i, bool* mark)
 {
   // Declaration
@@ -47,7 +106,7 @@ int* TourGeant(int nbclients, double **Dist)
     mark[k] = false;
 
   //On choisit de commencer par le sommet 1
-  T[0] = 1;
+  T[0] = 4;
   mark[T[0]] = true;
   
   // Tour géant
@@ -59,4 +118,21 @@ int* TourGeant(int nbclients, double **Dist)
   }
 
   return T;
+}
+
+int main() {
+  int nbclients;
+  int Q;
+  double** Dist;
+  int* quantite;
+  int* T;
+
+  Lecture(&nbclients,&Q,&Dist,&quantite);
+
+  T=TourGeant(nbclients,Dist);
+
+  for(int i=0;i<nbclients;i++) {
+    printf("%d ",T[i]); 
+  }
+
 }
