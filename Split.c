@@ -105,7 +105,7 @@ int* TourGeant(int nbclients, double **Dist)
     mark[k] = false;
 
   //On choisit de commencer par le sommet 1
-  T[0] = 4;
+  T[0] = 1;
   mark[T[0]] = true;
   
   // Tour géant
@@ -174,7 +174,7 @@ void ajouter_en_queue_liste(struct liste* L,int poids,int sommet,int client_debu
 }
 
 void Init_Head(struct liste* Head,int nbclient) {
-    for(int i=0;i<nbclient+1;i++) {
+    for(int i=0;i<nbclient;i++) {
       Head[i].tete = NIL;
       Head[i].nbelem = 0;
     }
@@ -209,7 +209,7 @@ struct liste* Split(int* T,int Q,int nbclient, double ** Dist, int* quantite)
     struct liste* H;
 
     H = malloc((nbclient+1)*sizeof(struct liste));
-    Init_Head(H,nbclient);
+    Init_Head(H,nbclient+1);
     printf("Initialisation faite \n");
     for (i=1;i<=nbclient;i++) {
         j = i;
@@ -219,7 +219,8 @@ struct liste* Split(int* T,int Q,int nbclient, double ** Dist, int* quantite)
           printf("i vaut %d et j vaut %d \n",i,j);
             load += quantite[T[j-1]-1];
             if (i==j) {
-                cost = 2*Dist[0][T[i-1]];
+                printf(" T de %d est %d \n",i-1,T[i-1]);
+                cost = Dist[0][T[i-1]] + Dist[T[i-1]][0];
             }
             
             else {
@@ -228,8 +229,8 @@ struct liste* Split(int* T,int Q,int nbclient, double ** Dist, int* quantite)
             }
 
             if (load <= Q) {
-                ajouter_en_queue_liste(&H[i-1],cost,j,i-1,j);
-                printf("ajout_en_queue fait pout %d et %d \n",i-1,j);
+                ajouter_en_tete_liste(&H[i-1],cost,j,i-1,j);
+                printf("ajout_en_tete fait pout %d et %d \n",i-1,j);
                 printf("cout entre %d et %d est %lf \n",i-1,j,cost);
             }
           j++;   
@@ -253,5 +254,7 @@ int main() {
 
   H=Split(T,Q,nbclients,Dist,quantite);
   afficher_liste(H,nbclients);
+
+
 
 }

@@ -8,6 +8,6 @@
 #include "Split.h"
 
 
-extern void Bellman(struct liste* ,double** ,int* ,double* ,int );
+extern void Bellman(struct liste*,double** ,int* ,double* ,int );
 
 #endif
