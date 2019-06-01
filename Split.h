@@ -7,8 +7,8 @@
 struct maillon {
     struct maillon* suivant;
     int sommet;
-    int* parcours;
-    int poids;
+    //int* parcours;
+    double poids;
 };
 
 struct liste {
@@ -28,5 +28,6 @@ struct liste {
 
 extern void Init_Head(struct liste*, int);
 extern struct liste* Split(int*,int ,int , double** , int*);
-
+extern void afficher_liste(struct liste*,int);
+extern void clear_liste(struct liste*);
 #endif
