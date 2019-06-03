@@ -71,7 +71,6 @@ double cout_total(double* pi,int nbclients) {
 }
 
 void chemin(int* T,int a, int b) {
-    //T = malloc((b-a)*sizeof(int));
     int i =a;
 
     for(int j=0;j<(b-a);j++) {

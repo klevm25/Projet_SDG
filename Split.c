@@ -9,14 +9,13 @@
 #include "Tour_geant.h"
 #include "Solution.h"
 
-void ajouter_en_tete_liste (struct liste* L,double poids, int sommet,int client_debut,int client_fin)
+void ajouter_en_tete_liste (struct liste* L,double poids, int sommet)
 {   struct maillon* nouveau;
 
     nouveau = (struct maillon*)malloc (sizeof (struct maillon));
     assert (nouveau != NIL);
     nouveau->poids  = poids;
-    nouveau->sommet = sommet;
-    //nouveau->parcours = chemin(client_debut,client_fin);  
+    nouveau->sommet = sommet;  
     nouveau->suivant = L->tete;
     L->tete = nouveau;
     L->nbelem += 1;
@@ -88,7 +87,7 @@ struct liste* Split(int* T,int Q,int nbclient, double ** Dist, int* quantite)
             }
 
             if (load <= Q) {
-                ajouter_en_tete_liste(&H[i-1],cost,j,i-1,j);
+                ajouter_en_tete_liste(&H[i-1],cost,j);
             }
           j++;   
         }

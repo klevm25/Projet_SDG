@@ -40,11 +40,9 @@ int* TourGeant(int nbclients, double **Dist,int sommet_initial)
   int k;
   int min;
   bool mark[nbclients+1];
-
-  int *T = (int*) malloc((nbclients+1)*sizeof(int));
-
   
   /* Initialisation */
+  int *T = (int*) malloc((nbclients+1)*sizeof(int));
   for(k=0;k<nbclients;k++)
     mark[k] = false;
 
