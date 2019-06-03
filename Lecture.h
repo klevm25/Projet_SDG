@@ -13,7 +13,7 @@ extern int * LectureQuantite(int);
 
 extern double ** LectureDist(int);
 
-extern void Lecture(int*, int*, double***, int**);
+extern void Lecture(int*,int*, int*, double***, int**);
 
 #endif
 

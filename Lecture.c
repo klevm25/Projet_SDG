@@ -23,7 +23,7 @@ double ** LectureDist(int nbclients)
   double** Dist;
   
   //allocation dynamique de Dist
-  Dist=(double**)malloc((nbclients+1) * sizeof(double *)); //ok
+  Dist=(double**)malloc((nbclients+1) * sizeof(double *));
   for(i=0;i<nbclients+1;i++)
   {
     Dist[i]=(double *)malloc((nbclients+1)*sizeof(double));
@@ -41,9 +41,10 @@ double ** LectureDist(int nbclients)
   return Dist;
 }
 
-void Lecture(int *nbclients,int *Q,double*** Dist,int** quantite)
+void Lecture(int* sommet,int *nbclients,int *Q,double*** Dist,int** quantite)
 {
-  //Lecture de nbclients et Q
+  //Lecture du sommet initial de nbclients et Q 
+  scanf("%d",sommet);
   scanf("%d",nbclients);
   scanf("%d",Q);
 

@@ -49,7 +49,7 @@ void clear_liste_sommet(struct liste_sommet* S)
         courant = suivant;
     }
 }
-struct liste_sommet* Decodage(int* pere,double* pi,int nbclients) {
+struct liste_sommet* Solution(int* pere,double* pi,int nbclients) {
     struct liste_sommet* Solution;
     Solution = (struct liste_sommet*)malloc(sizeof(struct sommet));
     assert(Solution != (struct liste_sommet*)0);

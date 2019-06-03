@@ -34,7 +34,7 @@ int RechercheProcheVoisin(double** Dist,int nbclients, int i, bool* mark)
   return indi_min;
 }
 
-int* TourGeant(int nbclients, double **Dist)
+int* TourGeant(int nbclients, double **Dist,int sommet_initial)
 {
   /* Declaration */
   int k;
@@ -48,8 +48,8 @@ int* TourGeant(int nbclients, double **Dist)
   for(k=0;k<nbclients;k++)
     mark[k] = false;
 
-  //On choisit de commencer par le sommet 1
-  T[0] = 1;
+
+  T[0] = sommet_initial;
   mark[T[0]] = true;
   
   // Tour géant

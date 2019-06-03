@@ -11,7 +11,7 @@ void Bellman(struct liste* H,double** Dist, int* pere,double* pi,int nbclient) {
     r=0;
     struct maillon* courant= H[r].tete;
     for (k=0; k<=nbclient; k++) {
-        pi[k] = 10000000;
+        pi[k] = 100000000;
         pere[k]=r;
     }
     pi[r]=0;

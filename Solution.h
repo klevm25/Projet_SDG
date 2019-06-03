@@ -15,7 +15,7 @@ struct liste_sommet {
 
 /* Prototype */
 
-extern struct liste_sommet* Decodage(int*,double*,int);
-extern double cout_total(double*,int);
+extern struct liste_sommet* Solution(int*,double*,int);
 extern void clear_liste_sommet(struct liste_sommet*);
 extern void affiche_liste_sommet(struct liste_sommet*);
+extern double cout_total(double*,int);
