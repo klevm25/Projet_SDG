@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include "Bellman.h"
+#define MAX_ENTIER 100000000000000
 
 void Bellman(struct liste* H,double** Dist, int* pere,double* pi,int nbclient) {
     int r,i,j,k;
@@ -11,7 +12,7 @@ void Bellman(struct liste* H,double** Dist, int* pere,double* pi,int nbclient) {
     r=0;
     struct maillon* courant= H[r].tete;
     for (k=0; k<=nbclient; k++) {
-        pi[k] = 100000000;
+        pi[k] = MAX_ENTIER;
         pere[k]=r;
     }
     pi[r]=0;

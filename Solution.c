@@ -3,6 +3,7 @@
 #include "Bellman.h"
 #include "Solution.h"
 #include "Split.h"
+#include "Split.h"
 
 
 void ajout_en_tete_sommet(struct liste_sommet* L,int d) {
@@ -44,10 +45,10 @@ void clear_liste_sommet(struct liste_sommet* S)
     courant = S->tete;
     for (i = 0; i < S->nbelem; i++)
     {   suivant = courant->suivant;
-/* appeler ici un �ventuel destructeur pour nouveau->value */
         free (courant);
         courant = suivant;
     }
+    free(courant);
 }
 struct liste_sommet* Solution(int* pere,double* pi,int nbclients) {
     struct liste_sommet* Solution;
@@ -67,4 +68,45 @@ struct liste_sommet* Solution(int* pere,double* pi,int nbclients) {
 
 double cout_total(double* pi,int nbclients) {
     return pi[nbclients];
+}
+
+void chemin(int* T,int a, int b) {
+    //T = malloc((b-a)*sizeof(int));
+    int i =a;
+
+    for(int j=0;j<(b-a);j++) {
+        T[j] = i;
+        i++;
+    }
+}
+
+
+void affiche_solution(struct liste_sommet* S,struct liste* H,int* T) {
+    int* A;
+    struct sommet* M;
+    struct maillon* N;
+    M = S->tete;
+    A = malloc((S->nbelem+1)*sizeof(int));
+
+    for(int i=0;i<S->nbelem-1;i++) {
+        chemin(A,M->sommet,M->suivant->sommet);
+        printf("Le véhicule %d livre le(s) client(s) ",i+1);
+        for(int j=0; j < (M->suivant->sommet - M->sommet);j++) {
+            if(j== (M->suivant->sommet - M->sommet)-1) {
+                printf("%d ",T[A[j]]);
+            }
+            else {
+                printf("%d et ",T[A[j]]);
+            }
+            N = H[M->sommet].tete;
+            while(N->sommet != M->suivant->sommet) {
+                N = N->suivant;
+            }
+        }
+        printf(" et le coût de ce déplacement est de %f \n",N->poids);
+        printf("\n");
+        M = M->suivant;
+        
+    }
+    free(T);
 }

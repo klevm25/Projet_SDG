@@ -26,7 +26,7 @@ double ** LectureDist(int nbclients)
   Dist=(double**)malloc((nbclients+1) * sizeof(double *));
   for(i=0;i<nbclients+1;i++)
   {
-    Dist[i]=(double *)malloc((nbclients+1)*sizeof(double));
+    Dist[i]=(double*)malloc((nbclients+1)*sizeof(double));
   }
   
   //Remplissage de Dist

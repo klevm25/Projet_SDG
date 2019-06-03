@@ -7,6 +7,7 @@
 #include "Split.h"
 #include "Bellman.h"
 #include "Solution.h"
+#include "Clear.h"
 
 int main() {
   int nbclients,Q,sommet_initial;
@@ -18,7 +19,11 @@ int main() {
   double *pi;
   struct liste_sommet* S;
   
+  /*FILE* fic;
+  scanf("%d",&sommet_initial);
+  fic = freopen("exemple.dat","r",stdin); */
   Lecture(&sommet_initial,&nbclients,&Q,&Dist,&quantite);
+  //fclose(fic);
 
   T=TourGeant(nbclients,Dist,sommet_initial);
   H=Split(T,Q,nbclients,Dist,quantite);
@@ -31,25 +36,17 @@ int main() {
   Bellman(H,Dist,pere,pi,nbclients);
 
   S = Solution(pere,pi,nbclients);
+
   printf("Le tour géant commence avec le client %d\n",sommet_initial);
   printf("Le coût total de livraison est %f \n",cout_total(pi,nbclients));
-  printf("Les sommets parcourus sont : \n");
+  printf("Les sommets parcourus dans le graphe H sont : ");
   affiche_liste_sommet(S);
+  printf("\n");
+  affiche_solution(S,H,T);
+  printf("\n");
   printf("Pour réaliser la livraison nous avons besoin de %d camions \n",S->nbelem-1);
 
-  free(quantite);
-  for(int i=0;i<nbclients;i++) {
-    free(Dist[i]);
-    clear_liste(&H[i]);
-  }
-  free(Dist);
-  clear_liste(&H[nbclients]);
-  free(pere);
-  free(pi);
-   
-  clear_liste_sommet(S);
-  
-  free(T);
+  clear_donnee(quantite,Dist,T,H,pere,pi,S,nbclients);
 
   return 0;
 }

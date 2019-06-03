@@ -62,6 +62,7 @@ void clear_liste(struct liste* L) {
         free (courant);
         courant = suivant;
     }
+    free(courant);
 }
 
 struct liste* Split(int* T,int Q,int nbclient, double ** Dist, int* quantite)
