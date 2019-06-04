@@ -1,9 +1,11 @@
 #include <stdbool.h>
 #include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "Bellman.h"
 #include "Solution.h"
-#include "Split.h"
-#include "Split.h"
+
+
 
 
 void ajout_en_tete_sommet(struct liste_sommet* L,int d) {
@@ -89,20 +91,21 @@ void affiche_solution(struct liste_sommet* S,struct liste* H,int* T) {
 
     for(int i=0;i<S->nbelem-1;i++) {
         chemin(A,M->sommet,M->suivant->sommet);
-        printf("Le véhicule %d livre le(s) client(s) ",i+1);
+        printf("Tournée %d : \t",i+1);
         for(int j=0; j < (M->suivant->sommet - M->sommet);j++) {
             if(j== (M->suivant->sommet - M->sommet)-1) {
-                printf("%d ",T[A[j]]);
+                printf(" Client %d \t ",T[A[j]]);
             }
             else {
-                printf("%d et ",T[A[j]]);
+                printf("Client %d \t ",T[A[j]]);
             }
             N = H[M->sommet].tete;
             while(N->sommet != M->suivant->sommet) {
                 N = N->suivant;
             }
         }
-        printf(" et le coût de ce déplacement est de %f \n",N->poids);
+        printf("\n");
+        printf("Le coût de ce déplacement est de %f \n",N->poids);
         printf("\n");
         M = M->suivant;
         

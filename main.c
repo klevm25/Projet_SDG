@@ -19,11 +19,7 @@ int main() {
   double *pi;
   struct liste_sommet* S;
   
-  /*FILE* fic;
-  scanf("%d",&sommet_initial);
-  fic = freopen("exemple.dat","r",stdin); */
   Lecture(&sommet_initial,&nbclients,&Q,&Dist,&quantite);
-  //fclose(fic);
 
   T=TourGeant(nbclients,Dist,sommet_initial);
   H=Split(T,Q,nbclients,Dist,quantite);
@@ -31,16 +27,14 @@ int main() {
   pere = malloc((nbclients+1)*sizeof(int));
   pi = malloc((nbclients+1)*sizeof(double)); 
 
-  //afficher_liste(H,nbclients);
-
   Bellman(H,Dist,pere,pi,nbclients);
 
   S = Solution(pere,pi,nbclients);
 
   printf("Le tour géant commence avec le client %d\n",sommet_initial);
   printf("Le coût total de livraison est %f \n",cout_total(pi,nbclients));
-  printf("Les sommets parcourus dans le graphe H sont : ");
-  affiche_liste_sommet(S);
+  /*printf("Les sommets parcourus dans le graphe H sont : ");
+  affiche_liste_sommet(S); */
   printf("\n");
   affiche_solution(S,H,T);
   printf("\n");

@@ -5,9 +5,6 @@
 #include <stdbool.h>
 #include <assert.h>
 #include "Split.h"
-#include "Lecture.h"
-#include "Tour_geant.h"
-#include "Solution.h"
 
 void ajouter_en_tete_liste (struct liste* L,double poids, int sommet)
 {   struct maillon* nouveau;

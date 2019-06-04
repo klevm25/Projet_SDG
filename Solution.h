@@ -1,7 +1,6 @@
-/* solution.h */
+/* Solution.h */
 
-#include "Bellman.h"
-#include "Split.h"
+
 /* Structure */
 struct sommet {
     struct sommet* suivant;

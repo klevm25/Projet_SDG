@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "Split.h"
 #include "Solution.h"
 #include "Clear.h"
