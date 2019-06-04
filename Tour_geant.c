@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "Tour_geant.h"
-#include "Lecture.h"
 
 
 int RechercheProcheVoisin(double** Dist,int nbclients, int i, bool* mark)

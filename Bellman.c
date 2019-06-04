@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include "Bellman.h"
-#define MAX_ENTIER 100000000000000
+#define MAX_ENTIER 1000000000
 
 void Bellman(struct liste* H,double** Dist, int* pere,double* pi,int nbclient) {
     int r,i,j,k;
