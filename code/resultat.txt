@@ -1,0 +1,50 @@
+Le tour géant commence avec le client 3
+Le coût total de livraison est 14162.330000 
+
+Tournée 1 : 	Client 3 	 Client 56 	 Client 29 	 Client 88 	 Client 63 	 Client 42 	  Client 16 	 
+Le coût de ce déplacement est de 1016.920000 
+
+Tournée 2 : 	Client 53 	 Client 98 	 Client 71 	 Client 72 	 Client 13 	 Client 95 	  Client 26 	 
+Le coût de ce déplacement est de 755.690000 
+
+Tournée 3 : 	Client 23 	 Client 49 	 Client 89 	 Client 93 	  Client 1 	 
+Le coût de ce déplacement est de 964.510000 
+
+Tournée 4 : 	Client 66 	 Client 17 	 Client 84 	 Client 28 	 Client 65 	 Client 85 	  Client 25 	 
+Le coût de ce déplacement est de 1594.730000 
+
+Tournée 5 : 	Client 47 	 Client 33 	 Client 27 	 Client 74 	 Client 75 	 Client 77 	 Client 35 	 Client 73 	  Client 100 	 
+Le coût de ce déplacement est de 693.640000 
+
+Tournée 6 : 	Client 97 	 Client 2 	 Client 52 	 Client 46 	 Client 55 	 Client 90 	 Client 5 	  Client 69 	 
+Le coût de ce déplacement est de 776.220000 
+
+Tournée 7 : 	Client 12 	 Client 51 	 Client 94 	 Client 32 	  Client 6 	 
+Le coût de ce déplacement est de 504.320000 
+
+Tournée 8 : 	Client 14 	 Client 20 	 Client 96 	 Client 39 	  Client 78 	 
+Le coût de ce déplacement est de 1039.690000 
+
+Tournée 9 : 	Client 7 	 Client 9 	 Client 18 	 Client 79 	 Client 21 	 Client 81 	 Client 80 	 Client 57 	  Client 30 	 
+Le coût de ce déplacement est de 694.320000 
+
+Tournée 10 : 	Client 44 	 Client 62 	 Client 19 	 Client 22 	  Client 37 	 
+Le coût de ce déplacement est de 953.460000 
+
+Tournée 11 : 	Client 61 	 Client 48 	 Client 43 	 Client 54 	 Client 68 	 Client 70 	  Client 82 	 
+Le coût de ce déplacement est de 695.530000 
+
+Tournée 12 : 	Client 15 	 Client 86 	 Client 38 	 Client 64 	 Client 40 	  Client 59 	 
+Le coût de ce déplacement est de 937.770000 
+
+Tournée 13 : 	Client 31 	 Client 76 	 Client 50 	 Client 60 	 Client 99 	  Client 92 	 
+Le coût de ce déplacement est de 505.950000 
+
+Tournée 14 : 	Client 87 	 Client 24 	 Client 8 	 Client 91 	 Client 45 	 Client 41 	  Client 36 	 
+Le coût de ce déplacement est de 1190.830000 
+
+Tournée 15 : 	Client 10 	 Client 4 	 Client 67 	 Client 83 	 Client 58 	 Client 34 	  Client 11 	 
+Le coût de ce déplacement est de 1838.750000 
+
+
+Pour réaliser la livraison nous avons besoin de 15 camions 
