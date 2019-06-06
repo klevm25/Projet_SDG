@@ -50,7 +50,6 @@ void clear_liste_sommet(struct liste_sommet* S)
         free (courant);
         courant = suivant;
     }
-    free(courant);
 }
 struct liste_sommet* Solution(int* pere,double* pi,int nbclients) {
     struct liste_sommet* Solution;
